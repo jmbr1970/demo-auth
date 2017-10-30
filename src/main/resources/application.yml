@@ -1,12 +1,16 @@
 # config context path to "/" by setting an empty string
+
 server:
   contextPath:
+  port: 18086
 
 # JACKSON
 spring:
   jackson:
     serialization:
       INDENT_OUTPUT: true
+  application:
+    name: auth_service
 
 jwt:
   header: Authorization
@@ -16,6 +20,11 @@ jwt:
     authentication:
       path: auth
       refresh: refresh
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:18082/eureka/
 
 #logging:
 #  level:
